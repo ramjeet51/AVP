@@ -1,0 +1,24 @@
+<div id="videoCallUI">
+  <button id="startButton">Start</button>
+  <button id="callButton" disabled>Call</button>
+  <button id="hangUpButton" disabled>Hang Up</button>
+</div>
+
+<script>
+  document.getElementById('startButton').onclick = function() {
+    alert('Call session initialized');
+    document.getElementById('callButton').disabled = false;
+  };
+
+  document.getElementById('callButton').onclick = function() {
+    alert('Video call started');
+    document.getElementById('hangUpButton').disabled = false;
+  };
+
+  document.getElementById('hangUpButton').onclick = function() {
+    alert('Video call ended');
+    document.getElementById('callButton').disabled = true;
+    document.getElementById('hangUpButton').disabled = true;
+  };
+</script>
+
