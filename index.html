@@ -1,24 +1,20 @@
-<div id="videoCallUI">
-  <button id="startButton">Start</button>
-  <button id="callButton" disabled>Call</button>
-  <button id="hangUpButton" disabled>Hang Up</button>
-</div>
 
-<script>
-  document.getElementById('startButton').onclick = function() {
-    alert('Call session initialized');
-    document.getElementById('callButton').disabled = false;
-  };
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Video Call App</title>
+  </head>
+  <body>
+    <h1>Video Call App</h1>
+    <video id="localVideo" autoplay playsinline></video>
+    <video id="remoteVideo" autoplay playsinline></video>
+    <br>
+    <button id="startButton">Start</button>
+    <button id="callButton">Call</button>
+    <button id="hangupButton">Hang Up</button>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
 
-  document.getElementById('callButton').onclick = function() {
-    alert('Video call started');
-    document.getElementById('hangUpButton').disabled = false;
-  };
-
-  document.getElementById('hangUpButton').onclick = function() {
-    alert('Video call ended');
-    document.getElementById('callButton').disabled = true;
-    document.getElementById('hangUpButton').disabled = true;
-  };
-</script>
 
